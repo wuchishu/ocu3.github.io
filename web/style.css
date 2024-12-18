@@ -1,0 +1,204 @@
+/* 全局樣式:統一所有元素的邊距與框模型 */
+* {
+    margin: 0;
+    /* 移除所有元素的預設外邊距，統一布局起點 */
+    padding: 0;
+    /* 移除所有元素的預設內邊距，確保容器寬度計算一致 */
+    box-sizing: border-box;
+    /* 設置 box 模型為 border-box，使寬度和高度包含內邊距與邊框 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* 設定網頁的全局字體為 Arial，若不支持則使用 sans-serif */
+    background-color: #13747a;
+    /* 背景色設為深藍綠色，營造簡潔的視覺效果 */
+    padding: 20px;
+    /* 給 body 添加 20px 的內邊距，避免內容緊貼邊緣 */
+}
+
+/* 頁面主標題樣式 */
+h1 {
+    font-size: 24px;
+    /* 主標題字體大小 */
+    text-align: center;
+    /* 標題置中 */
+    margin-bottom: 20px;
+    /* 與下方元素保持 20px 間距 */
+}
+
+/* 次標題樣式 */
+h2 {
+    font-size: 20px;
+    /* 次標題字體大小 */
+    text-align: center;
+    /* 次標題置中 */
+    margin-bottom: 20px;
+    /* 與下方元素保持 20px 間距 */
+}
+
+/* 段落文字樣式 */
+p {
+    font-size: 16px;
+    /* 段落落字體大小 */
+}
+
+/* 縮排樣式 */
+.indent {
+    padding-left: 20px;
+    /* 左縮排 20px */
+}
+
+/* 橫幅樣式 */
+.banner {
+    background-image: url('Dalle_flexbox.jpg');
+    /* 設置背景圖片 */
+    background-color: #f3f3f3;
+    /* 若圖片未加載則顯示淺灰色背景 */
+    background-size: cover;
+    /* 背景圖片完全覆蓋容器 */
+    background-position: center;
+    /* 圖片居中顯示 */
+    height: 600px;
+    /* 橫幅高度，可根據需要調整 */
+    display: flex;
+    /* 使用 Flexbox 排版 */
+    align-items: center;
+    /* 垂直居中對齊內容 */
+    justify-content: center;
+    /* 水平居中對齊內容 */
+    color: #fb061f;
+    /* 文字顏色紅色，與背景形成對比 */
+    text-align: center;
+    /* 文字居中對齊 */
+    padding: 20px;
+    /* 內部內容與邊框保持 20px 間距 */
+}
+
+/* 橫幅內部內容樣式 */
+.banner-content h1 {
+    font-size: 36px;
+    /* 橫幅主標題字體大小 */
+    margin-bottom: 10px;
+    /* 與下方按鈕保持 10px 間距 */
+}
+
+.banner-content .btn {
+    display: inline-block;
+    /* 使按鈕成為塊級元素但不換行 */
+    background-color: #007BFF;
+    /* 按鈕背景顏色 */
+    color: #fff;
+    /* 按鈕文字顏色 */
+    padding: 10px 20px;
+    /* 內邊距，上下 10px，左右 20px */
+    border-radius: 5px;
+    /* 圓角按鈕 */
+    text-decoration: none;
+    /* 移除文字下劃線 */
+    font-size: 16px;
+    /* 按鈕文字大小 */
+    transition: background-color 0.3s;
+    /* 背景顏色過渡效果 */
+}
+
+/* 按鈕的滑鼠懸停效果 */
+.banner-content .btn:hover {
+    background-color: #0056b3;
+    /* 滑鼠懸停時的顏色 */
+}
+
+/* Flex 父容器 */
+.flex-container {
+    display: flex;
+    /* 啟用 Flexbox 排列 */
+    flex-wrap: nowrap;
+    /* 允許子容器換行排列 */
+    justify-content: space-evenly;
+    /* 子容器在水平方向均勻分布 */
+    align-items: center;
+    /* 子容器垂直置中 */
+    padding: 20px;
+    /* 容器內部間距 */
+    background-color: #e0e0e0;
+    /* 背景色 */
+    border-radius: 10px;
+    /* 圓角 */
+    min-height: 300px;
+    /* 最小高度 */
+    border: 2px solid #ccc;
+    /* 容器邊框為淺灰色，實邊，寬度2px */
+    gap: 20px;
+    /* 子容器之間的間距為 20px */
+}
+
+/* Flex 子容器（方塊） */
+.box {
+    display: flex;
+    /* 子容器內也可以使用 Flexbox */
+    flex-direction: column;
+    /* 文字垂直置中 */
+    width: 400px;
+    /* 方塊寬度 */
+    height: 500px;
+    /* 方塊高度 */
+    background-color: dodgerblue;
+    /* 方塊背景色 */
+    color: white;
+    /* 文字顏色 */
+    font-size: 16px;
+    /* 字體大小*/
+    font-weight: bold;
+    /* 字體加粗 */
+    line-height: 1.4;
+    /* 行距比例例 */
+    border-radius: 5px;
+    /* 圓角邊框*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 方塊陰影 */
+    transition: transform 0.3s, background-color 0.3s;
+    /* 滑鼠懸停過渡效果 */
+    overflow: auto;
+    /* 啟用滾動條，防止內容溢出時無法顯示 */
+    padding: 20px;
+    /* 內邊距，避免文字緊貼邊框 */
+    text-align: left;
+    /* 文字靠左對齊 */
+    margin: 20px 0;
+    /* 上下外邊距為 20px */
+}
+
+/* 特殊樣式 - 不同方塊顏色 */
+.box.A {
+    background-color: #f44336;
+    /* 紅色背景 */
+    border-radius: 10px;
+    /* 圓角 */
+    word-wrap: break-word;
+    /* 自動換行防止文字溢出 */
+    overflow: hidden;
+    /* 滾動條防止內容溢出容器 */
+}
+
+.box.B {
+    background-color: #4caf50;
+    /* 綠色 */
+}
+
+.box.C {
+    background-color: #2196f3;
+    /* 藍色 */
+}
+
+.box.D {
+    background-color: #ff9800;
+    /* 橙色 */
+}
+
+/* Hover 效果 */
+.box:hover {
+    transform: scale(1.1);
+    /* 鼠標懸停時放大 */
+    background-color: #333;
+    /* 變成深色 */
+}

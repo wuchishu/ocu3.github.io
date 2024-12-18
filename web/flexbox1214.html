@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 設定網頁的文字編碼為 UTF-8，支援多種語言顯示 -->
+    <meta charset="UTF-8">
+    <!-- 讓網頁能適應不同設備大小（如手機或平板） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 定義網頁的標題，顯示在瀏覽器標籤上 -->
+    <title>Flexbox Example</title>
+    <!-- 引入外部 CSS 檔案，設定網頁的樣式 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts 的 Material Icons 字體，方便使用圖標 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <header class="banner">
+        <div class="banner-content">
+            <h1>樹哥的Flexbox解說</h1>
+            <a href="#about" class="btn">了解更多</a>
+        </div>
+    </header>
+
+    <main>
+
+
+        <div class="flex-container">
+            <div class="box A">
+                <h1>&lt;header&gt;
+                    &lt;/header&gt; 標籤</h1>
+                <p>
+                    &lt;header class=&quot;banner&quot;&gt; <br>
+                    &nbsp;&nbsp;&lt;!-- 橫幅區塊，包含標題和按鈕內容 --&gt;<br>
+                    &nbsp;&nbsp;&lt;div class=&quot;banner-content&quot;&gt; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- 橫幅標題 --&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;樹哥的Flexbox解說&lt;/h1&gt; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- 了解更多的按鈕，連結至 #about 區域 --&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#about&quot; class=&quot;btn&quot;&gt;了解更多&lt;/a&gt; <br>
+                    &nbsp;&nbsp;&lt;/div&gt; <br>
+                    &lt;/header&gt;
+
+
+                </p>
+            </div>
+            <div class="box B">
+                <h1>style.css </h1>
+                <p>
+                    /* 全局樣式:統一所有元素的邊距與框模型 */<br>
+                    * {<br>
+                    &nbsp;&nbsp;margin: 0; /* 移除所有元素的預設外邊距，統一布局起點 */<br>
+                    &nbsp;&nbsp;padding: 0; /* 移除所有元素的預設內邊距，確保容器寬度計算一致 */<br>
+                    &nbsp;&nbsp;box-sizing: border-box; /* 設置 box 模型為 border-box，使寬度和高度包含內邊距與邊框 */<br>
+                    }<br><br>
+
+                    body {<br>
+                    &nbsp;&nbsp;font-family: Arial, sans-serif; /* 設定網頁的全局字體為 Arial，若不支持則使用 sans-serif */<br>
+                    &nbsp;&nbsp;background-color: #13747a; /* 背景色設為深藍綠色，營造簡潔的視覺效果 */<br>
+                    &nbsp;&nbsp;padding: 20px; /* 給 body 添加 20px 的內邊距，避免內容緊貼邊緣 */<br>
+                    }<br><br>
+
+                    /* 頁面主標題樣式 */<br>
+                    h1 {<br>
+                    &nbsp;&nbsp;font-size: 24px; /* 主標題字體大小 */<br>
+                    &nbsp;&nbsp;text-align: center; /* 標題置中 */<br>
+                    &nbsp;&nbsp;margin-bottom: 20px; /* 與下方元素保持 20px 間距 */<br>
+                    }<br><br>
+
+                    /* 次標題樣式 */<br>
+                    h2 {<br>
+                    &nbsp;&nbsp;font-size: 20px; /* 次標題字體大小 */<br>
+                    &nbsp;&nbsp;text-align: center; /* 次標題置中 */<br>
+                    &nbsp;&nbsp;margin-bottom: 20px; /* 與下方元素保持 20px 間距 */<br>
+                    }<br><br>
+
+                    /* 段落文字樣式 */<br>
+                    p {<br>
+                    &nbsp;&nbsp;font-size: 16px; /* 段落落字體大小 */<br>
+                    }<br><br>
+
+                    /* 縮排樣式 */<br>
+                    .indent {<br>
+                    &nbsp;&nbsp;padding-left: 20px; /* 左縮排 20px */<br>
+                    }<br><br>
+
+                    /* 橫幅樣式 */<br>
+                    .banner {<br>
+                    &nbsp;&nbsp;background-image: url('img/Dalle_flexbox.webp'); /* 設置背景圖片 */<br>
+                    &nbsp;&nbsp;background-color: #f3f3f3; /* 若圖片未加載則顯示淺灰色背景 */<br>
+                    &nbsp;&nbsp;background-size: cover; /* 背景圖片完全覆蓋容器 */<br>
+                    &nbsp;&nbsp;background-position: center; /* 圖片居中顯示 */<br>
+                    &nbsp;&nbsp;height: 300px; /* 橫幅高度，可根據需要調整 */<br>
+                    &nbsp;&nbsp;display: flex; /* 使用 Flexbox 排版 */<br>
+                    &nbsp;&nbsp;align-items: center; /* 垂直居中對齊內容 */<br>
+                    &nbsp;&nbsp;justify-content: center; /* 水平居中對齊內容 */<br>
+                    &nbsp;&nbsp;color: #fb061f; /* 文字顏色紅色，與背景形成對比 */<br>
+                    &nbsp;&nbsp;text-align: center; /* 文字居中對齊 */<br>
+                    &nbsp;&nbsp;padding: 20px; /* 內部內容與邊框保持 20px 間距 */<br>
+                    }<br><br>
+
+                    /* 橫幅內部內容樣式 */<br>
+                    .banner-content h1 {<br>
+                    &nbsp;&nbsp;font-size: 36px; /* 橫幅主標題字體大小 */<br>
+                    &nbsp;&nbsp;margin-bottom: 10px; /* 與下方按鈕保持 10px 間距 */<br>
+                    }<br><br>
+
+                    .banner-content .btn {<br>
+                    &nbsp;&nbsp;display: inline-block; /* 使按鈕成為塊級元素但不換行 */<br>
+                    &nbsp;&nbsp;background-color: #007BFF; /* 按鈕背景顏色 */<br>
+                    &nbsp;&nbsp;color: #fff; /* 按鈕文字顏色 */<br>
+                    &nbsp;&nbsp;padding: 10px 20px; /* 內邊距，上下 10px，左右 20px */<br>
+                    &nbsp;&nbsp;border-radius: 5px; /* 圓角按鈕 */<br>
+                    &nbsp;&nbsp;text-decoration: none; /* 移除文字下劃線 */<br>
+                    &nbsp;&nbsp;font-size: 16px; /* 按鈕文字大小 */<br>
+                    &nbsp;&nbsp;transition: background-color 0.3s; /* 背景顏色過渡效果 */<br>
+                    }<br><br>
+
+                    /* 按鈕的滑鼠懸停效果 */<br>
+                    .banner-content .btn:hover {<br>
+                    &nbsp;&nbsp;background-color: #0056b3; /* 滑鼠懸停時的顏色 */<br>
+                    }<br><br>
+
+                    /* Flex 父容器 */<br>
+                    .flex-container {<br>
+                    &nbsp;&nbsp;display: flex; /* 啟用 Flexbox 排列 */<br>
+                    &nbsp;&nbsp;flex-wrap: wrap; /* 允許子容器換行排列 */<br>
+                    &nbsp;&nbsp;justify-content: space-evenly; /* 子容器在水平方向均勻分布 */<br>
+                    &nbsp;&nbsp;align-items: center; /* 子容器垂直置中 */<br>
+                    &nbsp;&nbsp;padding: 20px; /* 容器內部間距 */<br>
+                    &nbsp;&nbsp;background-color: #e0e0e0; /* 背景色 */<br>
+                    &nbsp;&nbsp;border-radius: 10px; /* 圓角 */<br>
+                    &nbsp;&nbsp;min-height: 300px; /* 最小高度 */<br>
+                    &nbsp;&nbsp;border: 2px solid #ccc; /* 容器邊框為淺灰色，實邊，寬度2px */<br>
+                    &nbsp;&nbsp;gap: 20px; /* 子容器之間的間距為 20px */<br>
+                    }<br>
+                </p>
+            </div>
+
+            <div class="box C">
+                <h1>
+                    &lt;body&gt;
+                    &lt;/body&gt; 標籤
+                </h1>
+
+                <p>
+                    &lt;body&gt;<br>
+                    &nbsp;&nbsp;&lt;main&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;樹哥的Flexbox精彩解說&lt;/h1&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-container&quot;&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;box A&quot;&gt;A&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;box B&quot;&gt;B&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;box C&quot;&gt;C&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;box D&quot;&gt;D&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;/main&gt;<br>
+                    &lt;/body&gt;
+                </p>
+                <h2>Html註釋重點</h2>
+                <p>
+                <p>
+                    <strong>1.</strong> &lt;main&gt; 區塊表示主要內容區域，語義化標籤，提升 SEO 和可讀性。
+                </p>
+                <p>
+                    <strong>2.</strong> &lt;h1&gt; 主標題為頁面的主要標題，描述頁面主旨內容。
+                </p>
+                <p>
+                    <strong>3.</strong> &lt;div class="flex-container"&gt;<br>
+                    <span class="indent">• Flexbox 容器，用來排列內部的子容器（方塊 A, B, C, D）。</span><br>
+                    <span class="indent">• Flexbox 的排列行為由 CSS 控制。</span>
+
+                </p>
+                <p>
+                    <strong>4.</strong>Flexbox子容器&lt; div class="box A"&gt;至&lt;div class="box D"&gt;<br>
+                    <span class="indent">•作為父容器內排列的對象。</span><br>
+                    <span class="indent">•每個子容器分別使用不同的類名（如 A, B 等），方便區分與設置樣式。</span>
+                </p>
+
+
+
+
+                </p>
+            </div>
+            <div class="box D">
+                <h1>
+                    &lt;head&gt;
+                    &lt;/head&gt; 標籤
+                </h1>
+
+                <p>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&lt;meta charset=&quot;UTF-8&quot;&gt;<br>
+                    &nbsp;&nbsp;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                    initial-scale=1.0&quot;&gt;<br>
+                    &nbsp;&nbsp;&lt;title&gt;Flexbox Example&lt;/title&gt;<br>
+                    &nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;<br>
+                    &nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot;
+                    href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;<br>
+                    &lt;/head&gt;
+                </p><br>
+                <h2>註釋</h2>
+                <p>
+                    &lt;meta charset=&quot;UTF-8&quot;&gt;<br>
+                    確保網頁支援多語言（包括中文）。<br>
+                    防止頁面中的文字亂碼，這是所有 HTML 文件的基本配置。<br>
+                    <br>
+                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>
+                    <strong>width=device-width：</strong>讓網頁寬度隨設備寬度變化。<br>
+                    <strong>initial-scale=1.0：</strong>設置初始縮放比例為 1（即不縮放）。<br>
+                    <br>
+                    &lt;title&gt;&lt;/title&gt;<br>
+                    指定頁面的名稱，會顯示在瀏覽器標籤和書籤中。<br>
+                    可以包含關鍵字以提升 SEO 表現。<br>
+                    <br>
+                    &lt;link rel=&quot;stylesheet&quot; href=&quot;1style.css&quot;&gt;<br>
+                    將外部的樣式檔案 style.css 連結到 HTML 文件。<br>
+                    這樣可以分離結構（HTML）和樣式（CSS），提升代碼可維護性。<br>
+                    <br>
+                    &lt;link rel=&quot;stylesheet&quot;
+                    href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;<br>
+                    使用 Google Fonts 提供的 Material Icons 字體庫。<br>
+                    方便在頁面中直接使用現成的圖標（例如：&lt;i class=&quot;material-icons&quot;&gt;home&lt;/i&gt; 顯示一個房子圖標）。<br>
+                </p>
+
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
